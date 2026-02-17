@@ -7,7 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: andyholmes/flatter@main
+      - name: Install Flatpak Builder
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y flatpak-builder elfutils
+        - uses: andyholmes/flatter@main
         with:
           files: |
             org.bobtail.Softstore.yml
@@ -23,7 +27,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.output }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
