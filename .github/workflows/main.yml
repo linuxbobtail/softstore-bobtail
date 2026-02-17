@@ -11,6 +11,9 @@ jobs:
         with:
           files: |
             org.bobtail.Softstore.yml
+          gpg-sign: ${{ secrets.GPG_KEY_ID }}
+          gpg-import: ${{ secrets.GPG_PRIVATE_KEY }}
+          repo-title: "Bobtail Softstore"
           upload-pages-artifact: true
   deploy:
     needs: build
@@ -20,7 +23,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.output }}$
+      url: ${{ steps.deployment.output }}
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
