@@ -7,9 +7,10 @@ modules:
   - name: Softstore
     buildsystem: simple
     build-commands:
-      - install -D softstore-binary /app/bin/softstore-binary
+      - install -D softstore-binary.sh /app/bin/softstore-binary.sh
     sources:
       - type: script
-        dest-filename: softstore-binary
+        dest-filename: softstore-binary.sh
         commands:
-          - echo "Softstore is now installed!"
+          - echo '#!/bin/sh'
+          - echo 'Softstore is now installed!'
