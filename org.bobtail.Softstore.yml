@@ -10,6 +10,6 @@ modules:
       - install -D softstore-binary /app/bin/softstore-binary
     sources:
       - type: script
-        dest-filename: softstone-binary
+        dest-filename: softstore-binary
         commands:
           - echo "Softstore is now installed!"
