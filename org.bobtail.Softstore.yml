@@ -9,5 +9,5 @@ modules:
     build-commands:
       - install -D softstore-binary /app/
     sources:
-      - type: file
-        path: softstore-binary
+      - type: dir
+        path: .
