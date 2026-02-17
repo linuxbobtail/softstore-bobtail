@@ -19,7 +19,6 @@ jobs:
             org.bobtail.Softstore.yml
           gpg-sign: ${{ secrets.GPG_KEY_ID }}
           gpg-import: ${{ secrets.GPG_PRIVATE_KEY }}
-          repo-title: "Bobtail Softstore"
           upload-pages-artifact: true
   deploy:
     needs: build
