@@ -11,7 +11,6 @@ modules:
     sources:
       - type: script
         dest-filename: softstore-binary.sh
-# test
         commands:
           - echo '#!/bin/sh'
           - echo 'Softstore is now installed!'
