@@ -13,7 +13,13 @@ jobs:
           sudo apt-get install -y flatpak-builder elfutils
           flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
           flatpak install --user -y flathub org.gnome.Sdk//45 org.gnome.Platform//45
-      - uses: andyholmes/flatter@main
+      - name: Import GPG key
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Build and Export
+        uses: andyholmes/flatter@main
         with:
           files: |
             org.bobtail.Softstore.yml
