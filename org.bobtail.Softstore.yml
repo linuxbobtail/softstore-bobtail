@@ -1,0 +1,13 @@
+app-id: org.bobtail.Softstore
+runtime: org.gnome.Platform
+runtime-version: '45'
+sdk: org.gnome.Sdk
+command: softstore-binary
+modules:
+  - name: Softstore
+    buildsystem: simple
+    build-commands:
+      - install -D softstore-binary /app/
+    sources:
+      - type: file
+        path: softstore-binary
