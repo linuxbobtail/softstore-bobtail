@@ -13,4 +13,4 @@ modules:
         dest-filename: softstore-binary.sh
         commands:
           - echo '#!/bin/sh'
-          - echo 'Softstore is now installed!'
+          - echo 'Softstore is now succesfully installed!'
